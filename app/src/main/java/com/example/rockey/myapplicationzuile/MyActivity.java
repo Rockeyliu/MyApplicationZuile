@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.homefragment.HomeFragment1;
 import com.example.minefragment.MineFragment;
@@ -18,7 +19,6 @@ import com.example.releasefragment.releasefragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class MyActivity extends TabActivity {
     private TabHost tabhost;
     // 存放Tab页中ImageView信息
@@ -47,7 +47,6 @@ public class MyActivity extends TabActivity {
         setContentView(R.layout.activity_my);
         //获取TabHost控件
         tabhost = getTabHost();
-
         addTab(0, "爱家乡", R.drawable.home_press, HomeFragment1.class);
         addTab(1,"发布", R.drawable.publish, releasefragment.class);
         addTab(2,"我的", R.drawable.wode, MineFragment.class);
@@ -61,18 +60,7 @@ public class MyActivity extends TabActivity {
 
 
             public void onTabChanged(String tabId) {
-                //Toast.makeText(MainActivity.this, tabId, 1000).show();
-
-                //此时mView是tab1.xml里的RelativeLayout，我们可以输出看看Log.i("AAA", mView.toString());
-//				View mView = tabhost.getTabWidget().getChildAt(0);//0是代表第一个Tab
-//				ImageView imageView = (ImageView)mView.findViewById(R.id.icon);//获取控件imageView
-//				imageView.setImageDrawable(getResources().getDrawable(R.drawable.main_index_home_normal)); //改变我们需要的图标
-//				TextView textview = (TextView)tabhost.getTabWidget().getChildAt(0).findViewById(R.id.title);
-                //注意定义和获取颜色方法：先用取色工具取色，再把颜色定义到res的values文件夹，在用getResources().getColor取颜色
-//				textview.setTextColor(getResources().getColor(R.color.tab_checked_color));
-//                addTab(0, "爱家乡", R.drawable.home, HomeFragment1.class);
-//                addTab(1,"发布", R.drawable.publish_press, releasefragment.class);
-//                addTab(2,"我的", R.drawable.wode_press, MineFragment.class);
+                Toast.makeText(MyActivity.this, tabId, Toast.LENGTH_LONG).show();
                 // 设置所有选项卡的图片为未选中图片
                 imageList.get(0).setImageDrawable(getResources().getDrawable(R.drawable.home));
                 imageList.get(1).setImageDrawable(getResources().getDrawable(R.drawable.publish));
@@ -94,7 +82,6 @@ public class MyActivity extends TabActivity {
                         imageList.get(2).setImageDrawable(getResources().getDrawable(R.drawable.wode_press));
                         textList.get(2).setTextColor(getResources().getColor(R.color.tab_checked_color));
                         break;
-
                 }
             }
         });
