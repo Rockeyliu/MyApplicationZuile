@@ -56,7 +56,6 @@ public class MyActivity extends TabActivity {
         tabhost.setBackgroundColor(Color.argb(150, 22, 70, 150));
         //设置当前显示哪一个标签
         tabhost.setCurrentTab(0);
-
         //标签切换事件处理，setOnTabChangedListener
         tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 
