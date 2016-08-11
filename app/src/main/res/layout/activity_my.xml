@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@android:id/tabhost"
-    tools:context="com.example.rockey.myapplicationzuile.MyActivity">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,4 +27,5 @@
             />
         <!-- android:showDividers="none"//这样tabwidget内tab间的分割线就没有了 -->
         <!-- android:divider="#ff00ff" 这样TabWidget内tab间就有分割线了，而且分割线的颜色为#ff00ff*/-->
-    </LinearLayout></TabHost>
+    </LinearLayout>
+</TabHost>

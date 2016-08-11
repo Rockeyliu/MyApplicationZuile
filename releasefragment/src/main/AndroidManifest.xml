@@ -8,6 +8,7 @@
         android:supportsRtl="true">
         <activity android:name=".releasefragment">
         </activity>
+        <activity android:name=".GridViewActivity"/>
     </application>
 
 </manifest>

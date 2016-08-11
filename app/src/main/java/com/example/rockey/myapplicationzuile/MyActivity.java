@@ -53,7 +53,7 @@ public class MyActivity extends TabActivity {
         addTab(2,"我的", R.drawable.wode, MineFragment.class);
         tabhost.getTabWidget().setStripEnabled(false); //设置底部下划线是否出现
         // 设置TabHost的背景颜色
-        tabhost.setBackgroundColor(Color.argb(150, 22, 70, 150));
+       //tabhost.setBackgroundColor(Color.argb(150, 22, 70, 150));
         //设置当前显示哪一个标签
         tabhost.setCurrentTab(0);
 

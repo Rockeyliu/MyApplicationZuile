@@ -15,25 +15,48 @@ import android.widget.TextView;
  * Created by Star on 2016/8/11.
  */
 public class GridViewActivity extends Activity {
+    GridView gridview;
+    BaseAdapter adapter ;
+
+    int[] icons = { R.drawable.meishi, R.drawable.yule, R.drawable.fangchan,
+            R.drawable.che, R.drawable.hunqing, R.drawable.zhuangxiu,
+            R.drawable.jiaoyu, R.drawable.gongzuo, R.drawable.baihuo,
+            R.drawable.tiaozhao, R.drawable.shangwu,R.drawable.bianmin,
+            R.drawable.laoxianghui,R.drawable.qita };
+    String[] name = {"美食","娱乐","房产","车","婚庆","装修","教育",
+            "工作","百货","跳蚤","商务","便民","老乡会","其他"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_releasefragment);
+        intadapter();
+        inview();
 
-        // 一、准备数据
-        final int[] icons = { R.drawable.meishi, R.drawable.yule, R.drawable.fangchan,
-                R.drawable.che, R.drawable.hunqing, R.drawable.zhuangxiu,
-                R.drawable.jiaoyu, R.drawable.gongzuo, R.drawable.baihuo,
-                R.drawable.tiaozhao, R.drawable.shangwu,R.drawable.bianmin,
-                R.drawable.laoxianghui,R.drawable.qita };
-        final String[] name = {"美食","娱乐","房产","车","婚庆","装修","教育",
-                               "工作","百货","跳蚤","商务","便民","老乡会","其他"};
+
+    }
+
+
+    private void inview() {
         // 二、找到网格控件
-        GridView gridview = (GridView) findViewById(R.id.gv_release);
-        // 三、设置适配器
-        BaseAdapter adapter = new BaseAdapter() {
+        gridview = (GridView) findViewById(R.id.gv_release);
+        gridview.setAdapter(adapter);
+       // 设置点击事件
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                ImageView showImg = (ImageView)findViewById(R.id.iv_icon);
+                showImg.setImageResource(icons[position]);
+            }
+        });
 
+    }
+
+    public void intadapter() {
+        // 三、设置适配器
+        adapter = new BaseAdapter() {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 // 新建一个布局，设置到convertView中（布局中包括一个图片）
@@ -42,7 +65,6 @@ public class GridViewActivity extends Activity {
                 // 设置布局里图片和文本的内容
                 ImageView img = (ImageView) convertView.findViewById(R.id.iv_icon);
                 ((ImageView) convertView.findViewById(R.id.iv_icon)).setImageResource(icons[position]);
-
                 TextView tv = (TextView) convertView.findViewById(R.id.tv_iconName);
                 ((TextView) convertView.findViewById(R.id.tv_iconName)).setText(name[position]);
                 return convertView;
@@ -63,17 +85,7 @@ public class GridViewActivity extends Activity {
                 return icons.length;
             }
         };
-        gridview.setAdapter(adapter);
-        //设置点击事件
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                ImageView showImg = (ImageView)findViewById(R.id.iv_icon);
-                showImg.setImageResource(icons[position]);
-            }
-        });
     }
 
 }
