@@ -3,7 +3,7 @@ package com.example.rockey.myapplicationzuile;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HomeActivitytohqq extends AppCompatActivity {
+public class SigninActivityFormLJ extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
