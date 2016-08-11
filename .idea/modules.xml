@@ -4,12 +4,17 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyApplicationZuile.iml" filepath="$PROJECT_DIR$/MyApplicationZuile.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplicationZuile.iml" filepath="$PROJECT_DIR$/MyApplicationZuile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationZuile.iml" filepath="$PROJECT_DIR$/MyApplicationZuile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/homefragment/homefragment.iml" filepath="$PROJECT_DIR$/homefragment/homefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/homefragment/homefragment.iml" filepath="$PROJECT_DIR$/homefragment/homefragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homefragment/homefragment.iml" filepath="$PROJECT_DIR$/homefragment/homefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/minefragment/minefragment.iml" filepath="$PROJECT_DIR$/minefragment/minefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/minefragment/minefragment.iml" filepath="$PROJECT_DIR$/minefragment/minefragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/minefragment/minefragment.iml" filepath="$PROJECT_DIR$/minefragment/minefragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/releasefragment/releasefragment.iml" filepath="$PROJECT_DIR$/releasefragment/releasefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/releasefragment/releasefragment.iml" filepath="$PROJECT_DIR$/releasefragment/releasefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/releasefragment/releasefragment.iml" filepath="$PROJECT_DIR$/releasefragment/releasefragment.iml" />
     </modules>
