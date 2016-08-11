@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="tab_checked_color">#FF6633</color>
+    <color name="tab_unchecked_color">#666666</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="normal_background">#08377d</color>
+    <color name="darkorange">#ff8c00</color>
+    <color name="blue">#67b6f8</color>
+    <color name="lightblue">#78BAFF</color>
+    <color name="dialPlate_background">#292929</color>
+    <color name="linedark">#717171</color>
+    <color name="orange">#efc108</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
