@@ -24,6 +24,10 @@
 
         <activity android:name=".SigninActivityFormLJ">
         </activity>
+        <activity android:name=".RegisterActivityFromRockey">
+        </activity>
+        <activity android:name=".ForgetPasswordActivityFormRockey">
+        </activity>
     </application>
 
 </manifest>
