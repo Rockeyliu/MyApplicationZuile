@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.homefragment.HomeFragment1;
 import com.example.minefragment.MineFragment;
+import com.example.releasefragment.GridViewActivity;
 import com.example.releasefragment.releasefragment;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class MyActivity extends TabActivity {
         //获取TabHost控件
         tabhost = getTabHost();
         addTab(0, "爱家乡", R.drawable.home_press, HomeFragment1.class);
-        addTab(1,"发布", R.drawable.publish, releasefragment.class);
+        addTab(1,"发布", R.drawable.publish, GridViewActivity.class);
         addTab(2,"我的", R.drawable.wode, MineFragment.class);
         tabhost.getTabWidget().setStripEnabled(false); //设置底部下划线是否出现
         // 设置TabHost的背景颜色
