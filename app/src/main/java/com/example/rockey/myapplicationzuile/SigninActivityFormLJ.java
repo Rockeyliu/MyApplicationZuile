@@ -92,7 +92,7 @@ public class SigninActivityFormLJ extends AppCompatActivity {
     }
 
     public void forgetpwd(View view){
-       // startActivity(new Intent(SigninActivityFormLJ.this,RegistActivity.class));
+        startActivity(new Intent(SigninActivityFormLJ.this,ForgetPasswordActivityFormRockey.class));
     }
 
     public void loginreturn(View view){

@@ -104,4 +104,11 @@ public class Httpservice {
         params.addQueryStringParameter("newPwd",newPwd);
         x.http().get(params, callback);
     }
+
+     //核对验证码
+     public void checkCode(String code  , Callback.CommonCallback<String> callback){//用户登录
+         RequestParams params  = new RequestParams(Constant.IP+"checkCode");
+         params.addQueryStringParameter("code ",code );
+         x.http().get(params, callback);
+     }
 }

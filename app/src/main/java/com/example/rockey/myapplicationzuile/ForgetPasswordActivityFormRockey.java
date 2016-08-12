@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.example.rockey.myapplicationzuile.Httpservice.Httpservice;
+import com.example.rockey.myapplicationzuile.entity.HeiduiYzmEntity;
 import com.example.rockey.myapplicationzuile.entity.LoginEntity;
 
 import org.xutils.common.Callback;
@@ -49,19 +50,18 @@ public class  ForgetPasswordActivityFormRockey extends AppCompatActivity {
 
         forget_password_getmima.setFocusable(false);
 
-        Httpservice.getInstance().forgetPwd(forgetpwdgethaoma, forgetpwdgetyzm , new Callback.CommonCallback<String>() {
+        Httpservice.getInstance().checkCode( forgetpwdgetyzm , new Callback.CommonCallback<String>() {
 
             @Override
             public void onSuccess(String result) {
 
-                LoginEntity loginEntity = JSON.parseObject(result, LoginEntity.class);
-                if (loginEntity.getResult() == 200) {
-                    Log.i("TAG",loginEntity.getList().getUser_name());
-                    Toast.makeText(ForgetPasswordActivityFormRockey.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                HeiduiYzmEntity heiduiYzmEntity = JSON.parseObject(result, HeiduiYzmEntity.class);
+                if (heiduiYzmEntity.getResult() == 200) {
+                    Toast.makeText(ForgetPasswordActivityFormRockey.this, "验证成功", Toast.LENGTH_SHORT).show();
 
                     //  startActivity(new Intent(SigninActivityFormLJ.this, ));
                 } else {
-                    Toast.makeText(ForgetPasswordActivityFormRockey.this, "登录失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgetPasswordActivityFormRockey.this, "验证失败", Toast.LENGTH_SHORT).show();
                 }
 
             }
