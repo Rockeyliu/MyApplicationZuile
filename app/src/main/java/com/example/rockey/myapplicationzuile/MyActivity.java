@@ -10,8 +10,6 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.homefragment.HomeFragment1;
-import com.example.releasefragment.GridViewActivity;
 import com.example.rockey.myapplicationzuile.Firstinterface.HomeActivity;
 import com.example.rockey.myapplicationzuile.Secondinterface.ReleaseGridActivity;
 import com.example.rockey.myapplicationzuile.ThirdinterfacetformRockey.MineActivity;
@@ -54,7 +52,6 @@ public class MyActivity extends TabActivity {
        //tabhost.setBackgroundColor(Color.argb(150, 22, 70, 150));
         //设置当前显示哪一个标签
         tabhost.setCurrentTab(0);
-
         //标签切换事件处理，setOnTabChangedListener
         tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 
@@ -74,6 +71,7 @@ public class MyActivity extends TabActivity {
                         imageList.get(0).setImageDrawable(getResources().getDrawable(R.drawable.home_press));
                         textList.get(0).setTextColor(getResources().getColor(R.color.tab_checked_color));
                         break;
+
                     case 1:
                         imageList.get(1).setImageDrawable(getResources().getDrawable(R.drawable.publish_press));
                         textList.get(1).setTextColor(getResources().getColor(R.color.tab_checked_color));

@@ -61,7 +61,7 @@
             android:hint="11位手机号码" />
 
         <Button
-            android:id="@+id/getyzm"
+            android:id="@+id/btn_getyzm"
             android:onClick="getyzm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
@@ -23,38 +24,48 @@ public class releaseActivityFormRockey extends AppCompatActivity {
 
     @ViewInject(value = R.id.register)
     public Button register;
-    @ViewInject(value = R.id.getyzm)
+    @ViewInject(value = R.id.btn_getyzm)
     public Button getyzm;
-    @ViewInject(value = R.id.iv_back2)
-    public Image iv_back2;
-    @ViewInject(value = R.id.register_checkbox)
-    public CheckBox register_checkbox;
-    @ViewInject(value = R.id.register_haoma)
-    private EditText register_haoma;
-    @ViewInject(value = R.id.register_yzm)
-    private EditText register_yzm;
-    @ViewInject(value = R.id.register_mima)
-    private EditText register_mima;
-    @ViewInject(value = R.id.register_mimaagain)
-    private EditText register_mimaagain;
+  @ViewInject(value = R.id.iv_back2)
+    public ImageView ivback2;
+  ///  @ViewInject(value = R.id.register_checkbox)
+    public CheckBox registercheckbox;
+//    @ViewInject(value = R.id.register_haoma)
+    private EditText registerhaoma;
+ //   @ViewInject(value = R.id.register_yzm)
+    private EditText registeryzm;
+ //   @ViewInject(value = R.id.register_mima)
+    private EditText registermima;
+  //  @ViewInject(value = R.id.register_mimaagain)
+    private EditText registermimaagain;
     String haoma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+      x.view().inject(this);
+      intview();
+    }
 
-        x.view().inject(this);
+    private void intview() {
 
+        ivback2= (ImageView) findViewById(R.id.iv_back2);
+        registercheckbox= (CheckBox) findViewById(R.id.register_checkbox);
+        registerhaoma= (EditText) findViewById(R.id.register_haoma);
+        registeryzm= (EditText) findViewById(R.id.register_yzm);
+        registermima=(EditText) findViewById(R.id.register_mima);
+
+        registermimaagain= (EditText) findViewById(R.id.register_mimaagain);
     }
 
 
     @Event(value = R.id.register)
     private void register(View view) {
-        haoma = register_haoma.getText().toString();
-        String yzm = register_yzm.getText().toString();
-        String mima = register_mima.getText().toString();
-        String mimaagain = register_mimaagain.getText().toString();
+        haoma = registerhaoma.getText().toString();
+        String yzm = registeryzm.getText().toString();
+        String mima = registermima.getText().toString();
+        String mimaagain = registermimaagain.getText().toString();
 
         register.setFocusable(false);
 
@@ -100,9 +111,12 @@ public class releaseActivityFormRockey extends AppCompatActivity {
     }
 
 
-    @Event(value = R.id.getyzm)
+
+
+
+    @Event(value = R.id.btn_getyzm)
     private void getyzm(View view) {
-        haoma = register_haoma.getText().toString();
+        haoma = registerhaoma.getText().toString();
        // Toast.makeText(RegisterActivityFromRockey.this,haoma,Toast.LENGTH_LONG).show();
         getyzm.setFocusable(false);
         Httpservice.getInstance().scanCode(haoma, new Callback.CommonCallback<String>() {
