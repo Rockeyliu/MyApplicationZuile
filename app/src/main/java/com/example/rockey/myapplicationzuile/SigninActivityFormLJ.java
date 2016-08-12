@@ -87,7 +87,6 @@ public class SigninActivityFormLJ extends AppCompatActivity {
     }
 
     public void uerregister(View view){
-        Toast.makeText(getApplicationContext(),"注册",Toast.LENGTH_SHORT).show();
        startActivity(new Intent(SigninActivityFormLJ.this,releaseActivityFormRockey.class));
     }
 

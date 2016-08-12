@@ -23,7 +23,7 @@ public class RegistActivity extends AppCompatActivity {
 
     @ViewInject(value = R.id.register)
     public Button register;
-    @ViewInject(value = R.id.getyzm)
+    @ViewInject(value = R.id.btn_getyzm)
     public Button getyzm;
     @ViewInject(value = R.id.iv_back2)
     public Image iv_back2;
@@ -100,7 +100,7 @@ public class RegistActivity extends AppCompatActivity {
     }
 
 
-    @Event(value = R.id.getyzm)
+    @Event(value = R.id.btn_getyzm)
     private void getyzm(View view) {
         getyzm.setFocusable(false);
         Httpservice.getInstance().scanCode(haoma, new Callback.CommonCallback<String>() {
