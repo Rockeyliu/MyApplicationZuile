@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.example.rockey.myapplicationzuile.Httpservice.Httpservice;
-import com.example.rockey.myapplicationzuile.constant.Constant;
 import com.example.rockey.myapplicationzuile.entity.LoginEntity;
 
 import org.xutils.common.Callback;
@@ -61,6 +60,7 @@ public class SigninActivityFormLJ extends AppCompatActivity {
                 if (loginEntity.getResult() == 200) {
                     Log.i("TAG",loginEntity.getList().getUser_name());
                     Toast.makeText(SigninActivityFormLJ.this, "登陆成功", Toast.LENGTH_SHORT).show();
+
                   //  startActivity(new Intent(SigninActivityFormLJ.this, ));
                 } else {
                     Toast.makeText(SigninActivityFormLJ.this, "登录失败", Toast.LENGTH_SHORT).show();
@@ -87,7 +87,8 @@ public class SigninActivityFormLJ extends AppCompatActivity {
     }
 
     public void uerregister(View view){
-        startActivity(new Intent(SigninActivityFormLJ.this,RegisterActivityFromRockey.class));
+        Toast.makeText(getApplicationContext(),"注册",Toast.LENGTH_SHORT).show();
+       startActivity(new Intent(SigninActivityFormLJ.this,releaseActivityFormRockey.class));
     }
 
     public void forgetpwd(View view){

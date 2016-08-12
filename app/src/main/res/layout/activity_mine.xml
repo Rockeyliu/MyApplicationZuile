@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
 
+>
     <RelativeLayout
+
+        android:clickable="true"
+        android:onClick="signin"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#52C679"
-        android:clickable="true"
-        android:onClick="signin"
         android:orientation="horizontal"
         >
 
@@ -21,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:background="#ffffff"
             android:src="@drawable/anim_1"/>
 
@@ -30,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:layout_toRightOf="@id/img_signinHeadportrait"
             android:gravity="center"
             android:text="点击登录"
@@ -54,4 +55,5 @@
 
 
     </ListView>
+
 </LinearLayout>

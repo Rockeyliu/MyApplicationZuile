@@ -4,25 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context="com.example.releasefragment.releasefragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="vertical"
-    android:background="#52C679"
-    >
-<TextView
-    android:text="选择发布类型"
-    android:gravity="center"
-    android:layout_gravity="center"
-    android:textSize="25dp"
-    android:layout_marginTop="10dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="#ffffff"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:background="#52C679"
+        >
+        <TextView
+            android:text="选择发布类型"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"/>
 
-</LinearLayout>
+
+    </LinearLayout>
     <GridView
         android:layout_weight="1"
         android:id="@+id/gv_release"

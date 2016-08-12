@@ -16,7 +16,7 @@ public class releasefragment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_releasefragment); //共用一个Layout，界面使用同一个ListView
+      //  setContentView(R.layout.activity_releasefragment); //共用一个Layout，界面使用同一个ListView
 
 
     }

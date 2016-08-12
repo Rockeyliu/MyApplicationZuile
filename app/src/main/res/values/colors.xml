@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="tab_checked_color">#FF6633</color>
+    <color name="tab_checked_color">#52C679</color>
     <color name="tab_unchecked_color">#666666</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>

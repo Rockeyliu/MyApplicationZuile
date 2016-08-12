@@ -19,7 +19,7 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-public class RegisterActivityFromRockey extends AppCompatActivity {
+public class releaseActivityFormRockey extends AppCompatActivity {
 
     @ViewInject(value = R.id.register)
     public Button register;
@@ -67,12 +67,12 @@ public class RegisterActivityFromRockey extends AppCompatActivity {
 
                     RegisterUserEntity registerUserEntity = JSON.parseObject(result, RegisterUserEntity.class);
                     if (registerUserEntity.getResult() == 200) {
-                        Toast.makeText(RegisterActivityFromRockey.this, "注册成功", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(releaseActivityFormRockey.this, "注册成功", Toast.LENGTH_SHORT).show();
                         //  startActivity(new Intent(SigninActivityFormLJ.this, ));
                     } else if (registerUserEntity.getResult() == 201) {
-                        Toast.makeText(RegisterActivityFromRockey.this, "验证码不正确", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(releaseActivityFormRockey.this, "验证码不正确", Toast.LENGTH_SHORT).show();
                     } else if (registerUserEntity.getResult() == 202) {
-                        Toast.makeText(RegisterActivityFromRockey.this, "手机号码、密码、验证码不能为空", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(releaseActivityFormRockey.this, "手机号码、密码、验证码不能为空", Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -95,7 +95,7 @@ public class RegisterActivityFromRockey extends AppCompatActivity {
                 }
             });
         } else {
-            Toast.makeText(RegisterActivityFromRockey.this, "再次确认密码错误", Toast.LENGTH_SHORT).show();
+            Toast.makeText(releaseActivityFormRockey.this, "再次确认密码错误", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -110,9 +110,9 @@ public class RegisterActivityFromRockey extends AppCompatActivity {
             public void onSuccess(String result) {
                 GetyzmEntity getyzmEntity = JSON.parseObject(result, GetyzmEntity.class);
                 if (getyzmEntity.getCode() == 0) {
-                    Toast.makeText(RegisterActivityFromRockey.this, "发送成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(releaseActivityFormRockey.this, "发送成功", Toast.LENGTH_SHORT).show();
                 }else if(getyzmEntity.getCode() == 2){
-                    Toast.makeText(RegisterActivityFromRockey.this, "参数 mobile 格式不正确，mobile手机号格式不正确", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(releaseActivityFormRockey.this, "参数 mobile 格式不正确，mobile手机号格式不正确", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override

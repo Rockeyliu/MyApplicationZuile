@@ -24,9 +24,15 @@
 
         <activity android:name=".SigninActivityFormLJ">
         </activity>
-        <activity android:name=".RegisterActivityFromRockey">
-        </activity>
         <activity android:name=".ForgetPasswordActivityFormRockey">
+        </activity>
+        <activity android:name=".ThirdinterfacetformRockey.MineActivity">
+        </activity>
+        <activity android:name=".releaseActivityFormRockey">
+        </activity>
+        <activity android:name=".Secondinterface.ReleaseGridActivity">
+        </activity>
+        <activity android:name=".Firstinterface.HomeActivity">
         </activity>
     </application>
 
