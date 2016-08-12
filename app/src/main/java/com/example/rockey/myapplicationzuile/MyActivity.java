@@ -71,6 +71,7 @@ public class MyActivity extends TabActivity {
                         imageList.get(0).setImageDrawable(getResources().getDrawable(R.drawable.home_press));
                         textList.get(0).setTextColor(getResources().getColor(R.color.tab_checked_color));
                         break;
+
                     case 1:
                         imageList.get(1).setImageDrawable(getResources().getDrawable(R.drawable.publish_press));
                         textList.get(1).setTextColor(getResources().getColor(R.color.tab_checked_color));
