@@ -96,4 +96,12 @@ public class Httpservice {
         params.addQueryStringParameter("phone",phone);
         x.http().get(params, callback);
     }
+
+    //  忘记密码
+    public void forgetPwd(String user_id ,String newPwd , Callback.CommonCallback<String> callback){//用户登录
+        RequestParams params  = new RequestParams(Constant.IP+"scanCode");
+        params.addQueryStringParameter("user_id",user_id);
+        params.addQueryStringParameter("newPwd",newPwd);
+        x.http().get(params, callback);
+    }
 }
