@@ -45,7 +45,7 @@ public class Httpservice {
     //  2016/8/11 该接口可能有问题
     public void login(String third_login_tag,String userName ,String pwd, Callback.CommonCallback<String> callback){//用户登录
         RequestParams params  = new RequestParams(Constant.IP+"isLogin");
-        params.addQueryStringParameter("third_login_tag",userName);
+        params.addQueryStringParameter("third_login_tag",third_login_tag);
         params.addQueryStringParameter("userName",userName);
         params.addQueryStringParameter("pwd",pwd);
         x.http().get(params, callback);
@@ -81,4 +81,19 @@ public class Httpservice {
 //       }
 
 
+    //  注册用户信息
+    public void registerUser(String phone,String pwd  ,String code , Callback.CommonCallback<String> callback){//用户登录
+        RequestParams params  = new RequestParams(Constant.IP+"isLogin");
+        params.addQueryStringParameter("third_login_tag",phone);
+        params.addQueryStringParameter("userName",pwd);
+        params.addQueryStringParameter("pwd",code);
+        x.http().get(params, callback);
+    }
+
+    //  获取验证码
+    public void scanCode(String phone , Callback.CommonCallback<String> callback){//用户登录
+        RequestParams params  = new RequestParams(Constant.IP+"isLogin");
+        params.addQueryStringParameter("third_login_tag",phone);
+        x.http().get(params, callback);
+    }
 }
