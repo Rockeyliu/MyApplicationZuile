@@ -1,10 +1,8 @@
-package com.example.homefragment.adapter;
+package com.example.rockey.myapplicationzuile.Firstinterface.Adapter;
 
 /**
  * Created by Administrator on 2016/8/12.
  */
-
-import java.util.List;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,11 +12,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.homefragment.R;
-import com.example.homefragment.entity.HomeListEntity;
+
+import com.example.rockey.myapplicationzuile.Firstinterface.HomeListEntity;
+import com.example.rockey.myapplicationzuile.R;
 
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
+
+import java.util.List;
 
 public class HomeListItemAdapter extends BaseAdapter {
 

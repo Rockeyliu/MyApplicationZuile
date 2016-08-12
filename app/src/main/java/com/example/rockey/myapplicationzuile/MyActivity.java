@@ -10,8 +10,6 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.homefragment.HomeFragment1;
-import com.example.releasefragment.GridViewActivity;
 import com.example.rockey.myapplicationzuile.Firstinterface.HomeActivity;
 import com.example.rockey.myapplicationzuile.Secondinterface.ReleaseGridActivity;
 import com.example.rockey.myapplicationzuile.ThirdinterfacetformRockey.MineActivity;
@@ -46,7 +44,7 @@ public class MyActivity extends TabActivity {
         setContentView(R.layout.activity_my);
         //获取TabHost控件
         tabhost = getTabHost();
-        addTab(0, "爱家乡", R.drawable.home_press, HomeFragment1.class);
+        addTab(0, "爱家乡", R.drawable.home_press, HomeActivity.class);
         addTab(1,"发布", R.drawable.publish, ReleaseGridActivity.class);
         addTab(2,"我的", R.drawable.wode, MineActivity.class);
         tabhost.getTabWidget().setStripEnabled(false); //设置底部下划线是否出现
@@ -54,7 +52,6 @@ public class MyActivity extends TabActivity {
        //tabhost.setBackgroundColor(Color.argb(150, 22, 70, 150));
         //设置当前显示哪一个标签
         tabhost.setCurrentTab(0);
-
         //标签切换事件处理，setOnTabChangedListener
         tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 
