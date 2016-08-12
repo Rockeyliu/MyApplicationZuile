@@ -92,8 +92,8 @@ public class Httpservice {
 
     //  获取验证码
     public void scanCode(String phone , Callback.CommonCallback<String> callback){//用户登录
-        RequestParams params  = new RequestParams(Constant.IP+"isLogin");
-        params.addQueryStringParameter("third_login_tag",phone);
+        RequestParams params  = new RequestParams(Constant.IP+"scanCode");
+        params.addQueryStringParameter("phone",phone);
         x.http().get(params, callback);
     }
 }

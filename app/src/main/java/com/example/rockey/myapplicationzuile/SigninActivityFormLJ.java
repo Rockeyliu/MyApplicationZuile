@@ -70,24 +70,24 @@ public class SigninActivityFormLJ extends AppCompatActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                btnLogin.setFocusable(true);
             }
 
             @Override
             public void onCancelled(CancelledException cex) {
-
+                btnLogin.setFocusable(true);
             }
 
             @Override
             public void onFinished() {
-
+                btnLogin.setFocusable(true);
             }
         });
 
     }
 
     public void uerregister(View view){
-        startActivity(new Intent(SigninActivityFormLJ.this,RegistActivity.class));
+        startActivity(new Intent(SigninActivityFormLJ.this,RegisterActivityFromRockey.class));
     }
 
     public void forgetpwd(View view){

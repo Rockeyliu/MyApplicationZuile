@@ -3,18 +3,16 @@ package com.example.rockey.myapplicationzuile;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.example.rockey.myapplicationzuile.Httpservice.Httpservice;
-import com.example.rockey.myapplicationzuile.entity.LoginEntity;
 import com.example.rockey.myapplicationzuile.entity.RegisterUserEntity;
+import com.example.rockey.myapplicationzuile.entity.GetyzmEntity;
 
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.Event;
@@ -39,6 +37,7 @@ public class RegistActivity extends AppCompatActivity {
     private EditText register_mima;
     @ViewInject(value = R.id.register_mimaagain)
     private EditText register_mimaagain;
+    String haoma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +51,14 @@ public class RegistActivity extends AppCompatActivity {
 
     @Event(value = R.id.register)
     private void register(View view) {
-        String haoma = register_haoma.getText().toString();
+        haoma = register_haoma.getText().toString();
         String yzm = register_yzm.getText().toString();
         String mima = register_mima.getText().toString();
         String mimaagain = register_mimaagain.getText().toString();
 
         register.setFocusable(false);
 
-        if(mima == mimaagain) {
+        if (mima == mimaagain) {
 
             Httpservice.getInstance().registerUser(haoma, mima, yzm, new Callback.CommonCallback<String>() {
 
@@ -82,21 +81,51 @@ public class RegistActivity extends AppCompatActivity {
 
                 @Override
                 public void onError(Throwable ex, boolean isOnCallback) {
-
+                    register.setFocusable(true);
                 }
 
                 @Override
                 public void onCancelled(CancelledException cex) {
-
+                    register.setFocusable(true);
                 }
 
                 @Override
                 public void onFinished() {
-
+                    register.setFocusable(true);
                 }
             });
-        }else {
+        } else {
             Toast.makeText(RegistActivity.this, "再次确认密码错误", Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    @Event(value = R.id.getyzm)
+    private void getyzm(View view) {
+        getyzm.setFocusable(false);
+        Httpservice.getInstance().scanCode(haoma, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                GetyzmEntity getyzmEntity = JSON.parseObject(result, GetyzmEntity.class);
+                if (getyzmEntity.getCode() == 0) {
+                    Toast.makeText(RegistActivity.this, "发送成功", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
     }
 }
