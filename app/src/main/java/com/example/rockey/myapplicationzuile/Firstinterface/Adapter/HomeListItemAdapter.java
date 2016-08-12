@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.example.rockey.myapplicationzuile.Firstinterface.HomeListEntity;
+import com.example.rockey.myapplicationzuile.Firstinterface.model.HomeListEntity;
 import com.example.rockey.myapplicationzuile.R;
 
 import org.xutils.image.ImageOptions;

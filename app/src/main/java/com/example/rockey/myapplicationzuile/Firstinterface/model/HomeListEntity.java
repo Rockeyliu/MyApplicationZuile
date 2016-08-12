@@ -1,4 +1,4 @@
-package com.example.rockey.myapplicationzuile.Firstinterface;
+package com.example.rockey.myapplicationzuile.Firstinterface.model;
 
 import java.util.List;
 

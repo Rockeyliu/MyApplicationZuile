@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.rockey.myapplicationzuile.Firstinterface.Adapter.HomeListItemAdapter;
+import com.example.rockey.myapplicationzuile.Firstinterface.model.HomeListEntity;
 import com.example.rockey.myapplicationzuile.R;
 
 import java.util.ArrayList;
