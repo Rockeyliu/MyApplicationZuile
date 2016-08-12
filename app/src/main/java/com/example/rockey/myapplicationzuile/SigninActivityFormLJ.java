@@ -47,15 +47,12 @@ public class SigninActivityFormLJ extends AppCompatActivity {
     private void blogin(View view) {
         String uerName = et_uerName.getText().toString();
         String password = et_password.getText().toString();
-        Log.i("TA", "kaishi" + uerName + password);
-
+        Log.i("TAG", "kaishi" + uerName + password);
         btnLogin.setFocusable(false);
-
         Httpservice.getInstance().login("1",uerName, password,new Callback.CommonCallback<String>() {
-
             @Override
             public void onSuccess(String result) {
-
+                Log.d("嘴大", result);
                 LoginEntity loginEntity = JSON.parseObject(result, LoginEntity.class);
                 if (loginEntity.getResult() == 200) {
                     Log.i("TAG",loginEntity.getList().getUser_name());
@@ -70,6 +67,8 @@ public class SigninActivityFormLJ extends AppCompatActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
+                Log.d("嘴大", ex.getMessage());
+
                 btnLogin.setFocusable(true);
             }
 
