@@ -69,14 +69,22 @@ public class HomeListItemAdapter extends BaseAdapter {
     }
 
     private void initializeViews(HomeListEntity.ListBean object, ViewHolder holder) {
-        x.image().bind(holder.ivStoreImg, object.getImgUrlList().get(0), options);
-        holder.imgTime.setImageResource(R.drawable.img_release_item_time);
-        holder.ivDianhua.setImageResource(R.drawable.list_phone);
+     //   x.image().bind(holder.ivStoreImg, object.getImgUrlList().get(0), options);
+      //  holder.imgTime.setImageResource(R.drawable.img_release_item_time);
+
+
+
+      //  holder.ivDianhua.setImageResource(R.drawable.list_phone);
         holder.tvStoreName.setText(object.getMerchant_name());
-        holder.tvMoney.setText(object.getPer_capita_consumption());
+   //   holder.tvMoney.setText(object.get);
         holder.tvAddress.setText(object.getBusiness_location());
-        holder.tvType.setText(object.getChild_category_id());
-        holder.tvWorkTime.setText(object.getOpening_time()+"-"+object.getClosing_time());
+       // holder.tvType.setText(object.getChild_category_id());
+        if (object.getOpening_time()!=null){
+            holder.tvWorkTime.setText(object.getOpening_time()+"-"+object.getClosing_time());
+        }else {
+            holder.tvWorkTime.setVisibility(View.INVISIBLE);
+
+        }
 
     }
 

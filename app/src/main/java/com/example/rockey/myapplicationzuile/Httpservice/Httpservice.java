@@ -21,7 +21,7 @@ public class Httpservice {
         return oneself;
     }
 
-    public void cityinfo( Callback.CommonCallback<String> callback){//获取城市信息
+    public void getcitylistinfo( Callback.CommonCallback<String> callback){//获取城市信息
         RequestParams params  = new RequestParams(Constant.IP+"printCity");
         x.http().get(params, callback);
     }

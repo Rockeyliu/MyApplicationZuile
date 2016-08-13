@@ -54,7 +54,7 @@ public class SigninActivityFormLJ extends AppCompatActivity {
                 Log.d("嘴大", result);
                 LoginEntity loginEntity = JSON.parseObject(result, LoginEntity.class);
                 if (loginEntity.getResult() == 200) {
-                    Log.i("TAG",loginEntity.getList().getUser_name());
+                    Log.i("TAG","itana"+loginEntity.getList().getUser_name());
                     Toast.makeText(SigninActivityFormLJ.this, "登陆成功", Toast.LENGTH_SHORT).show();
 
                   //  startActivity(new Intent(SigninActivityFormLJ.this, ));

@@ -44,7 +44,7 @@ public class MyActivity extends TabActivity {
         setContentView(R.layout.activity_my);
         //获取TabHost控件
         tabhost = getTabHost();
-        addTab(0, "爱家乡", R.drawable.home_press, SigninActivityFormLJ.class);
+        addTab(0, "爱家乡", R.drawable.home_press, HomeActivity.class);
         addTab(1,"发布", R.drawable.publish, ReleaseGridActivity.class);
         addTab(2,"我的", R.drawable.wode, MineActivity.class);
         tabhost.getTabWidget().setStripEnabled(false); //设置底部下划线是否出现

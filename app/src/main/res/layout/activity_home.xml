@@ -11,23 +11,32 @@
         android:layout_height="50dp"
         android:background="#52C679"
         android:orientation="horizontal">
+<LinearLayout
+    android:id="@+id/home_linearlayou_topopowd"
+    android:clickable="true"
+    android:onClick="homecitylistshow"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:gravity="center"
-            android:text="鳌江"
-            android:textColor="#ffffff"
-            android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tv_home_citylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="鳌江"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/area_icon" />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/area_icon" />
+
+</LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,6 +92,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:src="@drawable/home_centre_tp"
             android:id="@+id/img_left"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -95,6 +105,7 @@
             android:background="#cfcfcf" />
 
         <ImageView
+            android:src="@drawable/home_centre_tp2"
             android:id="@+id/img_right"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

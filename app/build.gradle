@@ -26,6 +26,6 @@ dependencies {
     compile project(path: ':releasefragment')
     compile project(path: ':minefragment')
     compile project(path: ':homefragment')
-    compile 'org.xutils:xutils:3.3.36'
     compile 'com.alibaba:fastjson:1.2.15'
+    compile 'org.xutils:xutils:3.3.36'
 }
