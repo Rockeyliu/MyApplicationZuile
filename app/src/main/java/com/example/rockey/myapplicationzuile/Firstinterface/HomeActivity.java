@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
 
         initData();
         initView();
-        inmRolliewPager();
+        inmRolliewPager();//载入滚动的  viewpage
     }
     private void inmRolliewPager() {
         mRollViewPager = (RollPagerView) findViewById(R.id.roll_view_pager);

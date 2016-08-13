@@ -82,12 +82,7 @@
         android:layout_height="180dp"
         app:rollviewpager_play_delay="3000"/>
 
-    <!--<android.support.v4.view.ViewPagerImageView-->
-        <!--android:id="@+id/img_print"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="160dp" />-->
-
-    <!--<android.support.v4.view.ViewPagerImageView-->
+    <!--<android.support.v7.view.ViewPager-->
         <!--android:id="@+id/img_icon"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="160dp" />-->
