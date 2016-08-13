@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb"
+    tools:context="com.example.rockey.myapplicationzuile.Firstinterface.DetailPageActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#52c679">
+
+        <ImageView
+            android:id="@+id/iv_detail_back"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:onClick="detailClick"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="详情"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/iv_shoucang"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:onClick="detailClick"
+            android:src="@drawable/love" />
+
+        <ImageView
+            android:id="@+id/iv_fenxiang"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_shoucang"
+            android:clickable="true"
+            android:onClick="detailClick"
+            android:src="@drawable/fenxiang" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollv_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_title">
+
+        <include layout="@layout/detail_scroll_item" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ebebeb"
+        android:orientation="horizontal"
+        android:layout_below="@id/scrollv_detail"
+        android:paddingTop="1dp">
+
+        <LinearLayout
+            android:id="@+id/detail_phone"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="#f5f5f5"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="detailClick"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:src="@drawable/phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电话"
+                android:textColor="#52c679"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/detail_jubao"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="#f5f5f5"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="detailClick"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:src="@drawable/jubao" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="举报"
+                android:textColor="#52c679"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.rockey.myapplicationzuile">
+    package="com.example.rockey.myapplicationzuile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
 
     <application
         android:name=".MainApplication"
@@ -11,31 +16,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MyActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <uses-permission android:name="android.permission.INTERNET"/>
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-        <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
-
-        <activity android:name=".SigninActivityFormLJ">
-        </activity>
-        <activity android:name=".ForgetPasswordActivityFormRockey">
-        </activity>
-        <activity android:name=".ThirdinterfacetformRockey.MineActivity">
-        </activity>
-        <activity android:name=".releaseActivityFormRockey">
-        </activity>
-        <activity android:name=".Secondinterface.ReleaseGridActivity">
-        </activity>
-        <activity android:name=".Firstinterface.HomeActivity">
-        </activity>
-        <activity android:name=".Firstinterface.MessageActivity">
-        </activity>
+        <activity android:name=".SigninActivityFormLJ"></activity>
+        <activity android:name=".ForgetPasswordActivityFormRockey"></activity>
+        <activity android:name=".ThirdinterfacetformRockey.MineActivity"></activity>
+        <activity android:name=".releaseActivityFormRockey"></activity>
+        <activity android:name=".Secondinterface.ReleaseGridActivity"></activity>
+        <activity android:name=".Firstinterface.HomeActivity"></activity>
+        <activity android:name=".Firstinterface.MessageActivity"></activity>
+        <activity android:name=".Firstinterface.DetailPageActivity"></activity>
     </application>
 
 </manifest>

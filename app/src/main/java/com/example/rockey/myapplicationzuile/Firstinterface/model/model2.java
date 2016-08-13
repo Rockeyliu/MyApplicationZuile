@@ -1,15 +1,14 @@
-package com.example.homefragment.entity;
+package com.example.rockey.myapplicationzuile.Firstinterface.model;
 
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/8/12.
+ * Created by Administrator on 2016/8/13.
  */
-public class HomeListEntity {
-
+public class model2 {
 
     /**
-     * list : [{"business_location":"宁乡县一环北路人人乐水晶城C座9楼，10楼（美丽人生中西餐厅楼上）","child_category_id":1,"city_id":1,"closing_time":"23:59","contact":"24小时前台","detail_id":2,"detail_info":"云中天商务会所集休闲，住宿，餐饮于一体。地处中心位置，周边人人乐商圈。吃喝玩乐都非常方便。云中天所有职工恭候您的光临。","imgUrlList":["http://p1.meituan.net/deal/__38987119__2907895.jpg"],"isApprove":0,"is_take_out":0,"measure_unit":"豪华单人间","merchant_name":"云中天商务宾馆","opening_time":"00:00","parent_category_id":1,"per_capita_consumption":158,"phone":"0731-87233777"}]
+     * list : [{"business_location":"望城县 高塘岭镇步行街A8栋4楼","child_category_id":11,"city_id":1,"detail_id":47,"detail_info":"基于影院设备之间的互联互通，每天24小时、全年365天无间断地为设备提供实时、专业的监控、预警和维护服务。目前，世纪美映数字电影设备监护系统已为今典院线、万达院线、新影联院线、比高国际等多家院线和影院提供服务，有效降低了由放映设备故障造成的维修费用和票房损失，显著提高观众满意度。","imgUrlList":[],"isApprove":0,"is_take_out":0,"merchant_name":"17.5影城（望城店）","parent_category_id":2,"per_capita_consumption":0,"phone":"0731-82021811","user_id":21}]
      * msg : success
      * result : 200
      */
@@ -17,22 +16,19 @@ public class HomeListEntity {
     private String msg;
     private int result;
     /**
-     * business_location : 宁乡县一环北路人人乐水晶城C座9楼，10楼（美丽人生中西餐厅楼上）
-     * child_category_id : 1
+     * business_location : 望城县 高塘岭镇步行街A8栋4楼
+     * child_category_id : 11
      * city_id : 1
-     * closing_time : 23:59
-     * contact : 24小时前台
-     * detail_id : 2
-     * detail_info : 云中天商务会所集休闲，住宿，餐饮于一体。地处中心位置，周边人人乐商圈。吃喝玩乐都非常方便。云中天所有职工恭候您的光临。
-     * imgUrlList : ["http://p1.meituan.net/deal/__38987119__2907895.jpg"]
+     * detail_id : 47
+     * detail_info : 基于影院设备之间的互联互通，每天24小时、全年365天无间断地为设备提供实时、专业的监控、预警和维护服务。目前，世纪美映数字电影设备监护系统已为今典院线、万达院线、新影联院线、比高国际等多家院线和影院提供服务，有效降低了由放映设备故障造成的维修费用和票房损失，显著提高观众满意度。
+     * imgUrlList : []
      * isApprove : 0
      * is_take_out : 0
-     * measure_unit : 豪华单人间
-     * merchant_name : 云中天商务宾馆
-     * opening_time : 00:00
-     * parent_category_id : 1
-     * per_capita_consumption : 158
-     * phone : 0731-87233777
+     * merchant_name : 17.5影城（望城店）
+     * parent_category_id : 2
+     * per_capita_consumption : 0
+     * phone : 0731-82021811
+     * user_id : 21
      */
 
     private List<ListBean> list;
@@ -65,19 +61,16 @@ public class HomeListEntity {
         private String business_location;
         private int child_category_id;
         private int city_id;
-        private String closing_time;
-        private String contact;
         private int detail_id;
         private String detail_info;
         private int isApprove;
         private int is_take_out;
-        private String measure_unit;
         private String merchant_name;
-        private String opening_time;
         private int parent_category_id;
         private int per_capita_consumption;
         private String phone;
-        private List<String> imgUrlList;
+        private int user_id;
+        private List<?> imgUrlList;
 
         public String getBusiness_location() {
             return business_location;
@@ -101,22 +94,6 @@ public class HomeListEntity {
 
         public void setCity_id(int city_id) {
             this.city_id = city_id;
-        }
-
-        public String getClosing_time() {
-            return closing_time;
-        }
-
-        public void setClosing_time(String closing_time) {
-            this.closing_time = closing_time;
-        }
-
-        public String getContact() {
-            return contact;
-        }
-
-        public void setContact(String contact) {
-            this.contact = contact;
         }
 
         public int getDetail_id() {
@@ -151,28 +128,12 @@ public class HomeListEntity {
             this.is_take_out = is_take_out;
         }
 
-        public String getMeasure_unit() {
-            return measure_unit;
-        }
-
-        public void setMeasure_unit(String measure_unit) {
-            this.measure_unit = measure_unit;
-        }
-
         public String getMerchant_name() {
             return merchant_name;
         }
 
         public void setMerchant_name(String merchant_name) {
             this.merchant_name = merchant_name;
-        }
-
-        public String getOpening_time() {
-            return opening_time;
-        }
-
-        public void setOpening_time(String opening_time) {
-            this.opening_time = opening_time;
         }
 
         public int getParent_category_id() {
@@ -199,11 +160,19 @@ public class HomeListEntity {
             this.phone = phone;
         }
 
-        public List<String> getImgUrlList() {
+        public int getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(int user_id) {
+            this.user_id = user_id;
+        }
+
+        public List<?> getImgUrlList() {
             return imgUrlList;
         }
 
-        public void setImgUrlList(List<String> imgUrlList) {
+        public void setImgUrlList(List<?> imgUrlList) {
             this.imgUrlList = imgUrlList;
         }
     }

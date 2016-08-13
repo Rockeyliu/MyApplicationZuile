@@ -37,8 +37,10 @@ public class Httpservice {
         x.http().get(params, callback);
     }
 
-    public void detailInfo( Callback.CommonCallback<String> callback){//查询发布信息
+    public void detailInfo(int page, int pageSize, Callback.CommonCallback<String> callback){//查询发布信息
         RequestParams params  = new RequestParams(Constant.IP+"detailInfo");
+        params.addQueryStringParameter("page",page+"");
+        params.addQueryStringParameter("pageSize",pageSize+"");
         x.http().get(params, callback);
     }
 
