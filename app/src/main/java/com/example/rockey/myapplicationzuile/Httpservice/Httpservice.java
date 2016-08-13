@@ -42,8 +42,8 @@ public class Httpservice {
         x.http().get(params, callback);
     }
 
-    //  2016/8/11 该接口可能有问题
-    public void login(String third_login_tag,String userName ,String pwd, Callback.CommonCallback<String> callback){//用户登录
+    //   第三方用户登录
+    public void login(String third_login_tag,String userName ,String pwd, Callback.CommonCallback<String> callback){
         RequestParams params  = new RequestParams(Constant.IP+"isLogin");
         params.addQueryStringParameter("third_login_tag",third_login_tag);
         params.addQueryStringParameter("userName",userName);
@@ -82,23 +82,23 @@ public class Httpservice {
 
 
     //  注册用户信息
-    public void registerUser(String phone,String pwd  ,String code , Callback.CommonCallback<String> callback){//用户登录
+    public void registerUser(String phone,String pwd  ,String code , Callback.CommonCallback<String> callback){
         RequestParams params  = new RequestParams(Constant.IP+"isLogin");
-        params.addQueryStringParameter("third_login_tag",phone);
-        params.addQueryStringParameter("userName",pwd);
-        params.addQueryStringParameter("pwd",code);
+        params.addQueryStringParameter("phone",phone);
+        params.addQueryStringParameter("pwd",pwd);
+        params.addQueryStringParameter("code",code);
         x.http().get(params, callback);
     }
 
     //  获取验证码
-    public void scanCode(String phone , Callback.CommonCallback<String> callback){//用户登录
+    public void scanCode(String phone , Callback.CommonCallback<String> callback){
         RequestParams params  = new RequestParams(Constant.IP+"scanCode");
         params.addQueryStringParameter("phone",phone);
         x.http().get(params, callback);
     }
 
     //  忘记密码
-    public void forgetPwd(String user_id ,String newPwd , Callback.CommonCallback<String> callback){//用户登录
+    public void forgetPwd(String user_id ,String newPwd , Callback.CommonCallback<String> callback){
         RequestParams params  = new RequestParams(Constant.IP+"scanCode");
         params.addQueryStringParameter("user_id",user_id);
         params.addQueryStringParameter("newPwd",newPwd);
@@ -106,7 +106,7 @@ public class Httpservice {
     }
 
      //核对验证码
-     public void checkCode(String code  , Callback.CommonCallback<String> callback){//用户登录
+     public void checkCode(String code  , Callback.CommonCallback<String> callback){
          RequestParams params  = new RequestParams(Constant.IP+"checkCode");
          params.addQueryStringParameter("code ",code );
          x.http().get(params, callback);

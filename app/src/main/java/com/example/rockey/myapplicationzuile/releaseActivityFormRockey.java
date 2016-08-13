@@ -69,7 +69,7 @@ public class releaseActivityFormRockey extends AppCompatActivity {
 
         register.setFocusable(false);
 
-        if (mima == mimaagain) {
+        if (mima.equals(mimaagain)) {
 
             Httpservice.getInstance().registerUser(haoma, mima, yzm, new Callback.CommonCallback<String>() {
 

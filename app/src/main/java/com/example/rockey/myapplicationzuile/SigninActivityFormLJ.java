@@ -47,7 +47,6 @@ public class SigninActivityFormLJ extends AppCompatActivity {
     private void blogin(View view) {
         String uerName = et_uerName.getText().toString();
         String password = et_password.getText().toString();
-        Log.i("TAG", "kaishi" + uerName + password);
         btnLogin.setFocusable(false);
         Httpservice.getInstance().login("1",uerName, password,new Callback.CommonCallback<String>() {
             @Override
