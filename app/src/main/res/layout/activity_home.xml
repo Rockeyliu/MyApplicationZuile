@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -74,6 +75,12 @@
             android:src="@drawable/message" />
     </LinearLayout>
 
+    <!--http://www.2cto.com/kf/201605/506583.html   方法网址-->
+    <com.jude.rollviewpager.RollPagerView
+        android:id="@+id/roll_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:rollviewpager_play_delay="3000"/>
 
     <!--<android.support.v4.view.ViewPagerImageView-->
         <!--android:id="@+id/img_print"-->

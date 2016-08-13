@@ -28,4 +28,6 @@ dependencies {
     compile project(path: ':homefragment')
     compile 'com.alibaba:fastjson:1.2.15'
     compile 'org.xutils:xutils:3.3.36'
+    compile 'com.jude:rollviewpager:1.2.9'
+
 }

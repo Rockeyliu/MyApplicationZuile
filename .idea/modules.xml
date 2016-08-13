@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/homefragment/homefragment.iml" filepath="$PROJECT_DIR$/homefragment/homefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/minefragment/minefragment.iml" filepath="$PROJECT_DIR$/minefragment/minefragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/releasefragment/releasefragment.iml" filepath="$PROJECT_DIR$/releasefragment/releasefragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rollviewpager/rollviewpager.iml" filepath="$PROJECT_DIR$/rollviewpager/rollviewpager.iml" />
     </modules>
   </component>
 </project>
