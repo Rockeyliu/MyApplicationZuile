@@ -89,17 +89,13 @@ public class HomeActivity extends AppCompatActivity {
         mRollViewPager.setHintView(new ColorPointHintView(this, Color.YELLOW,Color.WHITE));
         //mRollViewPager.setHintView(new TextHintView(this));
         //mRollViewPager.setHintView(null);
-
     }
 
     private class TestNormalAdapter extends StaticPagerAdapter {
         private int[] imgs = {
                 R.drawable.home_centre_tp,
                 R.drawable.home_centre_tp2
-
         };
-
-
         @Override
         public View getView(ViewGroup container, int position) {
             ImageView view = new ImageView(container.getContext());
@@ -108,8 +104,6 @@ public class HomeActivity extends AppCompatActivity {
             view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
             return view;
         }
-
-
         @Override
         public int getCount() {
             return imgs.length;
@@ -132,7 +126,6 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, DetailPageActivity.class));
             }
         });
-
     }
 
 
@@ -196,7 +189,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onFinished() {
                 homecityshow.setText(  citylistdates.get(0).getCity_name());
-
             }
         });
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CodeGeneratorSettings">
-    <option name="sourcePath" value="/app/src/main/java" />
+    <option name="sourcePath" value="/releasefragment/build/generated/source/r/debug" />
   </component>
 </project>
