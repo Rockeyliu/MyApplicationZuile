@@ -41,6 +41,7 @@
         </activity>
         <activity android:name=".ThirdinterfacetformRockey.CollectionActivity">
         </activity>
+
     </application>
 
 </manifest>
