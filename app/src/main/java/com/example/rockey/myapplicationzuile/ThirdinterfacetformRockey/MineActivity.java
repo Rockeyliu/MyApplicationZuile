@@ -70,7 +70,21 @@ List<Ownmodel> dates;
         minfragmentlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
+
+
+                switch (i){
+                    case 0:
+                        Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case 2:
+                        Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
             }
         });
     }
