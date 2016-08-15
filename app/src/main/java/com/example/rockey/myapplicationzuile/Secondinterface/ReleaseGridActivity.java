@@ -101,6 +101,7 @@ List<GridEntity.ListBean>  dates;
         int height = getResources().getDisplayMetrics().heightPixels;
         final PopupWindow popWindow = new PopupWindow(popView,width,height);
         popWindow.setFocusable(true);
+        popWindow.setAnimationStyle(R.style.AnimBottom);
         popWindow.setOutsideTouchable(false);// 设置允许在外点击消失
         ListView listview= (ListView) popView.findViewById(R.id.selease_poplistview);
         RelealPopwindowCitylistItemAdapter adapter = new RelealPopwindowCitylistItemAdapter(ReleaseGridActivity.this,popdatest);
