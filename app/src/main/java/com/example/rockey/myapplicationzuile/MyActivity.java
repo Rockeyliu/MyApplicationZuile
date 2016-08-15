@@ -57,7 +57,7 @@ public class MyActivity extends TabActivity {
 
 
             public void onTabChanged(String tabId) {
-                Toast.makeText(MyActivity.this, tabId, Toast.LENGTH_LONG).show();
+               // Toast.makeText(MyActivity.this, tabId, Toast.LENGTH_LONG).show();
                 // 设置所有选项卡的图片为未选中图片
                 imageList.get(0).setImageDrawable(getResources().getDrawable(R.drawable.home));
                 imageList.get(1).setImageDrawable(getResources().getDrawable(R.drawable.publish));

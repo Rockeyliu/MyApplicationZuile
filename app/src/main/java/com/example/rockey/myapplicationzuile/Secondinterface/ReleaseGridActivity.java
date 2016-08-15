@@ -63,7 +63,6 @@ List<GridEntity.ListBean>  dates;
                 //    gridtdates.addAll( citylistdate.getList());
                     dates.addAll(gridtdates.getList());
                     adapter.notifyDataSetChanged();
-
                     Log.d("我的数据", "城市列表加载完毕");
                 }else {
                     Log.d("HomeActivity", "获取失败");
@@ -89,8 +88,6 @@ List<GridEntity.ListBean>  dates;
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
-
                 releaseintpopwindows(dates.get(position).getChildCategoryList());
             }
         });
@@ -104,7 +101,7 @@ List<GridEntity.ListBean>  dates;
         int height = getResources().getDisplayMetrics().heightPixels;
         final PopupWindow popWindow = new PopupWindow(popView,width,height);
         popWindow.setFocusable(true);
-        popWindow.setOutsideTouchable(true);// 设置允许在外点击消失
+        popWindow.setOutsideTouchable(false);// 设置允许在外点击消失
         ListView listview= (ListView) popView.findViewById(R.id.selease_poplistview);
         RelealPopwindowCitylistItemAdapter adapter = new RelealPopwindowCitylistItemAdapter(ReleaseGridActivity.this,popdatest);
         listview.setAdapter(adapter);
@@ -112,7 +109,6 @@ List<GridEntity.ListBean>  dates;
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(ReleaseGridActivity.this, popdate.get(i).getChild_category_name().toString(), Toast.LENGTH_SHORT).show();
-
                 popWindow.dismiss();//关闭listview
             }
         });
