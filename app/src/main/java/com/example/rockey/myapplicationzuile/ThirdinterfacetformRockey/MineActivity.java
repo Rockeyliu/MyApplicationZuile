@@ -72,7 +72,7 @@ List<Ownmodel> dates;
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-                switch (i){
+                switch (i-1){
                     case 0:
                         Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
                         break;
@@ -81,7 +81,7 @@ List<Ownmodel> dates;
 
                         break;
                     case 2:
-                        Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MineActivity.this,CollectionActivity.class));
                         break;
                 }
 
