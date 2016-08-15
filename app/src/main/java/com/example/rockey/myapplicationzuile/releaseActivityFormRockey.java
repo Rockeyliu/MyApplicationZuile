@@ -19,7 +19,7 @@ import org.xutils.common.Callback;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
-
+//注册的  Activity
 public class releaseActivityFormRockey extends AppCompatActivity {
 
     @ViewInject(value = R.id.register)

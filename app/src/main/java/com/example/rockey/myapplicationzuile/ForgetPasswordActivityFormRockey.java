@@ -20,7 +20,7 @@ import org.xutils.common.Callback;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
-
+//忘记密码界面的
 public class  ForgetPasswordActivityFormRockey extends AppCompatActivity {
 
     @ViewInject(value = R.id.forget_password_getyzm)
@@ -40,7 +40,6 @@ public class  ForgetPasswordActivityFormRockey extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password_activity_form_rockey);
-
         x.view().inject(this);
 
     }

@@ -15,6 +15,7 @@ import com.example.rockey.myapplicationzuile.R;
 import com.example.rockey.myapplicationzuile.SigninActivityFormLJ;
 import com.example.rockey.myapplicationzuile.ThirdinterfacetformRockey.Adapter.MineListItemAdapter;
 import com.example.rockey.myapplicationzuile.ThirdinterfacetformRockey.Entity.Ownmodel;
+import com.example.rockey.myapplicationzuile.dbservice.userdbservice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ List<Ownmodel> dates;
 
 
     View headview,footerview; // list的头部。
-
+userdbservice userdbservice=new userdbservice(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,10 +60,16 @@ List<Ownmodel> dates;
 
     private void inview() {
         minfragmentlistview= (ListView) findViewById(R.id.minfragment_listview);
-        tvclicksignin= (TextView) findViewById(R.id.tv_click_signin);
-        img_signin= (ImageView) findViewById(R.id.img_signinHeadportrait);
+
+
+
         minfragmentlistview.addHeaderView(headview);
         minfragmentlistview.addFooterView(footerview);
+
+        tvclicksignin= (TextView) minfragmentlistview.findViewById(R.id.tv_click_signin);
+        img_signin= (ImageView) findViewById(R.id.img_signinHeadportrait);
+        tvclicksignin.setText(userdbservice.whethersomeonelanding());
+
          adapter=new MineListItemAdapter(MineActivity.this,dates);
 
           minfragmentlistview.setAdapter(adapter);
@@ -78,10 +85,12 @@ List<Ownmodel> dates;
                         break;
                     case 1:
                         Toast.makeText(MineActivity.this, dates.get(i-1).getName(), Toast.LENGTH_SHORT).show();
-
                         break;
                     case 2:
                     startActivity(new Intent(MineActivity.this,CollectionActivity.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(MineActivity.this,CollectionActivity.class));
                         break;
                 }
 
@@ -90,9 +99,28 @@ List<Ownmodel> dates;
     }
 
     public void signin(View v){
-         startActivity(new Intent(MineActivity.this, SigninActivityFormLJ.class));
+
+        if(userdbservice.whethersomeonelanding().length()>5){
+//修改信息
+        }else {
+            startActivity(new Intent(MineActivity.this, SigninActivityFormLJ.class));
+        }
     }
     public void   Exitlogin(View v){
+        //注销登陆
+        userdbservice.uploginxinxi(userdbservice.whethersomeonelanding(),0);
+        tvclicksignin.setText("点击登陆");
         Toast.makeText(this, "退出登录", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+       if(userdbservice.whethersomeonelanding().length()>5) {
+           tvclicksignin.setText(userdbservice.whethersomeonelanding());
+       }else {
+           tvclicksignin.setText("点击登陆");
+       }
+
+
     }
 }

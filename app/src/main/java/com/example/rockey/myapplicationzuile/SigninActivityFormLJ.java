@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.example.rockey.myapplicationzuile.Httpservice.Httpservice;
+import com.example.rockey.myapplicationzuile.dbservice.userdbservice;
 import com.example.rockey.myapplicationzuile.entity.LoginEntity;
 
 import org.xutils.common.Callback;
@@ -29,9 +30,17 @@ public class SigninActivityFormLJ extends AppCompatActivity {
     public TextView tv_uerregister;
     @ViewInject(value = R.id.tv_forgetpwd)
     public TextView tv_forgetpwd;
+    userdbservice userdbservice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //修改为登陆
+        userdbservice=new userdbservice(this);
+        userdbservice.uploginxinxi("15700725216",1);
+
+
+
+
         setContentView(R.layout.activity_home_activitytohqq);
 
         et_uerName = (EditText) findViewById(R.id.et_uerName);
@@ -45,13 +54,22 @@ public class SigninActivityFormLJ extends AppCompatActivity {
 
     @Event(value = R.id.btnLogin)
     private void blogin(View view) {
-        String uerName = et_uerName.getText().toString();
+        final String uerName = et_uerName.getText().toString();
         String password = et_password.getText().toString();
         btnLogin.setFocusable(false);
         Httpservice.getInstance().login("1",uerName, password,new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Log.d("嘴大", result);
+                //数据库登陆
+               userdbservice.changelogin(uerName,1);
+
+
+                //注销  为0
+              //  userdbservice.uploginxinxi(uerName,1);
+                //现在登录的手机号码
+              //  Log.d("是否有登陆", userdbservice.whethersomeonelanding());
+                //清除缓存
+              //  userdbservice.delete(uerName);
                 LoginEntity loginEntity = JSON.parseObject(result, LoginEntity.class);
                 if (loginEntity.getResult() == 200) {
                     Log.i("TAG","itana"+loginEntity.getList().getUser_name());

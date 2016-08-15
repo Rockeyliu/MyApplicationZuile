@@ -58,7 +58,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_title">
-
         <include layout="@layout/detail_scroll_item" />
     </ScrollView>
 
