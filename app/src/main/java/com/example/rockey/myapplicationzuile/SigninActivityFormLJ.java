@@ -37,10 +37,6 @@ public class SigninActivityFormLJ extends AppCompatActivity {
         //修改为登陆
         userdbservice=new userdbservice(this);
         userdbservice.uploginxinxi("15700725216",1);
-
-
-
-
         setContentView(R.layout.activity_home_activitytohqq);
 
         et_uerName = (EditText) findViewById(R.id.et_uerName);

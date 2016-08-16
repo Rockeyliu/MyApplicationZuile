@@ -120,7 +120,5 @@ userdbservice userdbservice=new userdbservice(this);
        }else {
            tvclicksignin.setText("点击登陆");
        }
-
-
     }
 }
