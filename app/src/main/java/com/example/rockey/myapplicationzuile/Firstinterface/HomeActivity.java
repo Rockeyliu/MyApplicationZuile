@@ -3,11 +3,13 @@ package com.example.rockey.myapplicationzuile.Firstinterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -23,10 +25,13 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.example.rockey.myapplicationzuile.Firstinterface.Adapter.HomeListItemAdapter;
 import com.example.rockey.myapplicationzuile.Firstinterface.Adapter.HomePopwindowCitylistItemAdapter;
+import com.example.rockey.myapplicationzuile.Firstinterface.model.Advertising;
 import com.example.rockey.myapplicationzuile.Firstinterface.model.HomeListEntity;
 import com.example.rockey.myapplicationzuile.Firstinterface.model.HomeTopCityListEntity;
 import com.example.rockey.myapplicationzuile.Httpservice.Httpservice;
 import com.example.rockey.myapplicationzuile.R;
+import com.example.rockey.myapplicationzuile.Secondinterface.GridEntity;
+import com.example.rockey.myapplicationzuile.constant.Constant;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
@@ -35,6 +40,7 @@ import org.xutils.common.Callback;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Toast;
 
+import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -58,12 +64,13 @@ public class HomeActivity extends AppCompatActivity {
     @ViewInject(value = R.id.tv_home_citylist)
     private TextView homecityshow;
     private RollPagerView mRollViewPager;
-
+    List<Advertising.ResultBean.DataBean> addatess;
+    TestNormalAdapter adadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        addatess=new ArrayList<Advertising.ResultBean.DataBean>();
         x.view().inject(this);
 
         initData();
@@ -72,14 +79,13 @@ public class HomeActivity extends AppCompatActivity {
     }
     private void inmRolliewPager() {
         mRollViewPager = (RollPagerView) findViewById(R.id.roll_view_pager);
-
         //设置播放时间间隔
         mRollViewPager.setPlayDelay(2000);
         //设置透明度
         mRollViewPager.setAnimationDurtion(500);
         //设置适配器
-        mRollViewPager.setAdapter(new TestNormalAdapter());
-
+         adadapter=new TestNormalAdapter(addatess);
+        mRollViewPager.setAdapter(adadapter);
         //设置指示器（顺序依次）
         //自定义指示器图片
         //设置圆点指示器颜色
@@ -89,35 +95,75 @@ public class HomeActivity extends AppCompatActivity {
         mRollViewPager.setHintView(new ColorPointHintView(this, Color.YELLOW,Color.WHITE));
         //mRollViewPager.setHintView(new TextHintView(this));
         //mRollViewPager.setHintView(null);
+
+
+
     }
 
     private class TestNormalAdapter extends StaticPagerAdapter {
-        private int[] imgs = {
-                R.drawable.home_centre_tp,
-                R.drawable.home_centre_tp2
-        };
-        @Override
-        public View getView(ViewGroup container, int position) {
+        private ImageOptions options;
+        private List<Advertising.ResultBean.DataBean> objects = new ArrayList<Advertising.ResultBean.DataBean>();
+        public TestNormalAdapter(List<Advertising.ResultBean.DataBean> objects ){
+            this.objects=objects;
+
+            options = new ImageOptions.Builder().setLoadingDrawableId(R.drawable.defualt) //设置加载过程中的图片
+                    .setFailureDrawableId(R.drawable.defualt) //设置加载失败后的图片
+                    .setUseMemCache(true) //设置使用缓存
+                    // .setCircular(true) //设置显示圆形图片
+                    .setIgnoreGif(true) //设置支持gif
+                    .build();
+        }
+
+
+
+        public View getView(ViewGroup container, final int position) {
+            final int b=position;
             ImageView view = new ImageView(container.getContext());
-            view.setImageResource(imgs[position]);
+          //  view.setImageResource(imgs[position]);
+            x.image().bind(view, Constant.MYIP+objects.get(position).getImg(),options);
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
             view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
+            view.setOnClickListener(new View.OnClickListener()      // 点击事件
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent=new Intent(HomeActivity.this,OpendADActivity.class);
+                    intent.putExtra("ADWEB",objects.get(b).getAddres());
+                    startActivity(intent);
+
+                    Toast.makeText(HomeActivity.this, "点击了第" + b + "张图片", Toast.LENGTH_SHORT).show();
+                }
+
+            });
+
+
+
+
             return view;
         }
         @Override
         public int getCount() {
-            return imgs.length;
+            return objects.size();
         }
+
+        /**
+         * Determines whether a page View is associated with a specific key object
+         * as returned by {@link #instantiateItem(ViewGroup, int)}. This method is
+         * required for a PagerAdapter to function properly.
+         *
+         * @param view   Page View to check for association with <code>object</code>
+         * @param object Object to check for association with <code>view</code>
+         * @return true if <code>view</code> is associated with the key object <code>object</code>
+         */
+
+
     }
-
-
-
     private void initView() {
         listView = (ListView) findViewById(R.id.lv_home);
         data = new ArrayList<HomeListEntity.ListBean>();
         citylistdates=new ArrayList<HomeTopCityListEntity.ListBean>();
-
-
         listAdapter = new HomeListItemAdapter(getApplicationContext(), data);
         listView.setAdapter(listAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -136,7 +182,6 @@ public class HomeActivity extends AppCompatActivity {
         Httpservice.getInstance().detailInfo(page, pageSize, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Log.d("我的数据", result);
                 homeListEntity = JSON.parseObject(result, HomeListEntity.class);
                 if (homeListEntity.getResult() == 200) {
                     data.addAll(homeListEntity.getList());
@@ -166,11 +211,9 @@ public class HomeActivity extends AppCompatActivity {
         Httpservice.getInstance().getcitylistinfo(new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-
                 HomeTopCityListEntity citylistdate=JSON.parseObject(result,HomeTopCityListEntity.class);
                 if (citylistdate.getResult()==200){
                     citylistdates.addAll( citylistdate.getList());
-                    Log.d("我的数据", "城市列表加载完毕");
                 }else {
                     Log.d("HomeActivity", "获取失败");
                 }
@@ -189,6 +232,36 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onFinished() {
                 homecityshow.setText(  citylistdates.get(0).getCity_name());
+            }
+        });
+
+        Httpservice.getInstance().getAdvertisinglist("",new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d("数据", result);
+                Advertising addates=JSON.parseObject(result,Advertising.class);
+                if(addates.getReason().equals("Success")){
+
+
+                    addatess.clear();
+                    addatess.addAll(addates.getResult().getData());
+                    adadapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
             }
         });
     }

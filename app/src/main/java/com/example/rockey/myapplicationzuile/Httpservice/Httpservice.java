@@ -1,5 +1,7 @@
 package com.example.rockey.myapplicationzuile.Httpservice;
 
+import android.util.Log;
+
 import com.example.rockey.myapplicationzuile.constant.ADmodel;
 import com.example.rockey.myapplicationzuile.constant.Constant;
 
@@ -113,4 +115,15 @@ public class Httpservice {
          params.addQueryStringParameter("code ",code );
          x.http().get(params, callback);
      }
+
+    /**
+     *
+     * @param format
+     * @param callback
+     */
+    public void getAdvertisinglist( String format,Callback.CommonCallback<String> callback){
+        RequestParams params  = new RequestParams(Constant.MYIP+"get.advertisement");
+        params.addQueryStringParameter("format ",format );
+        x.http().get(params, callback);
+    }
 }
